@@ -16,11 +16,23 @@ use Whoops\Run;
 |
 */
 
- Route::prefix('participation')->name('participation')->group( function () {
-    Route::get('/',[ParticipationController::class,'index']);
-    Route::get('/{participation}',[ParticipationController::class,'show']);
-    Route::post('/',[ParticipationController::class,'store']);
+     Route::prefix('participation')->name('participation')->group( function () {
+
+     Route::get('/',[ParticipationController::class,'index']);
+
+     Route::get('/participation/create',[Participationcontroller::class,'create']);
+     
+     Route::post('/',[ParticipationController::class,'store']);
+
+     Route::get('/{participation}',[ParticipationController::class,'show']);
+
+    
+
+     
+
+
  });
+ 
  
 
 

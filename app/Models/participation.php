@@ -9,5 +9,23 @@ class participation extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];
+    protected $fillable = ['name', 'age', 'address', 'phone', 'Email' ];
+    
+    public function scopefilter($query, array $filters){
+        if($filters['age'] ?? false) {
+            $query->where('age','like', '%' .request('age') . '%');
+
+        }
+    }
 }
+    
+
+    
+    
+
+  
+
+
+
+
+

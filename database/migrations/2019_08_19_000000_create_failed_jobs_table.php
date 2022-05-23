@@ -15,11 +15,6 @@ class CreateFailedJobsTable extends Migration
     {
         Schema::create('failed_jobs', function (Blueprint $table) {
             $table->id();
-            $table->string('Name')->index();
-            $table->int('Age');
-            $table->string('Address');
-            $table->string('phone');
-            $table->string('email');
             $table->timestamp('failed_at')->useCurrent();
         });
     }

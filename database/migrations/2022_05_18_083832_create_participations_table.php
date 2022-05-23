@@ -15,7 +15,11 @@ class CreateParticipationsTable extends Migration
     {
         Schema::create('participations', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('Name');
+            $table->string('Age');
+            $table->string('Address');
+            $table->string('phone');
+            $table->string('email');
             $table->timestamps();
         });
     }
