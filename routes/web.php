@@ -16,24 +16,56 @@ use Whoops\Run;
 |
 */
 
-     Route::prefix('participation')->name('participation')->group( function () {
 
-     Route::get('/',[ParticipationController::class,'index']);
+//     Route::prefix('participation')->name('participation')->group( function () {
 
-     Route::get('/participation/create',[Participationcontroller::class,'create']);
-     
-     Route::post('/',[ParticipationController::class,'store']);
+//     Route::get('/',[ParticipationController::class,'index'])->name('.index');
 
-     Route::get('/{participation}',[ParticipationController::class,'show']);
+//     Route::get('/participation/create',[ParticipationController::class,'create'])->name('.create');
+    
+//     Route::post('/',[ParticipationController::class,'store'])->name('.store');
+
+//     Route::get('/{participation}',[ParticipationController::class,'show'])->name('.show');
+
+//     Route::get('/{participation}/edit',[ParticipationController::class,'edit'])->name('.edit');
+
+//     Route::put('/{participation}/update',[ParticipationController::class,'update'])->name('.update');
+
+//     Route::get('/participation/{participation}',[ParticipationController::class,'destroy'])->name('.destroy');
 
     
 
-     
+
+// });
 
 
- });
- 
- 
+//     Route::prefix('competition')->name('competition')->group( function () {  
+
+//     Route::get('/',[CompetitionController::class,'index'])->name('.index');
+
+//     Route::get('/competition/create',[CompetitionController::class,'create'])->name('.create');
+
+//     Route::post('/',[CompetitionController::class,'store'])->name('.store');
+
+//     Route::get('/{competition}',[CompetitionController::class,'show'])->name('.show');
+
+//     Route::get('/{competition}/edit',[CompetitionController::class,'edit'])->name('.edit');
+
+// });
 
 
+Route::get('login', [AuthController::class, 'index'])->name('login');  
 
+Route::post('post-login', [AuthController::class, 'postLogin'])->name('login.post'); 
+
+Route::get('registration', [AuthController::class, 'registration'])->name('register');
+
+Route::post('post-registration', [AuthController::class, 'postRegistration'])->name('register.post');  
+
+Route::get('dashboard', [AuthController::class, 'dashboard'])->name('dashboard'); 
+
+Route::get('logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::get('asanacategory',[AuthController::class,'asanacategory'])->name('asanacategory');
+
+    

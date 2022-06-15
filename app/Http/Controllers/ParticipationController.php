@@ -3,46 +3,72 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Participation;
+use  App\Http\Requests\ParticipationRequest;
 
 class ParticipationController extends Controller
 {
-    public function index(){
-   
-    
-        return view('participation.index',[
-        'participation' => participation::latest()->filter(request(['age']))->get()
-        ]);
-      } 
-        
-    public function show(){
+  
+  //index function 
+
+    public function index()
+    {
+      $participation = Participation::latest()->paginate(10);
+      return view('participation.index');
+    }
+
+      public function show() {
         return view('participation.show');
-    } 
+    }   
+      //create function
 
-    public function create(){
-      return view('participation.create');
+    public function create() {
+      return view('participation.create');  
     }
 
+       //store function
 
-    public function store(request $request){
-        
-      $formfields = $request->validate ([
-        'Name'   =>'required',
-        'Age'    =>'required',
-        'Address'=>'required',
-        'phone'  =>'required',
-        'email'  =>['required','Email']
-      ]);
+    public function store(ParticipationRequest $request)
+    {
 
-      participation::create($formfields);
-
-      // return redirect('/')->with('message','participation created successfully!');
-
-
-    }
+      $inputData = [
+        'name' => $request->name,
+        'age' => $request->age,
+        'address' => $request->address,
+        'phone' => $request->phone,
+        'email' => $request->email 
+      ];
       
+      Participation::create($inputData);
 
+      return redirect('/')->with('message','participation created successfully!');
+    }
+
+    public function edit(participation $participation) {
+
+      return view('participation.edit');
+    }
+    public function update(Request $request, Participation $participation) {
+  
+      $inputData = [
+        'name' => $request->name,
+        'age' => $request->age,
+        'address' => $request->address,
+        'phone' => $request->phone,
+        'email' => $request->email 
+      ];
       
-    
-          
+      Participation::update($inputData);
+
+      return redirect('/')->with('message','participation updated successfully!');
 
     }
+    public function destroy(Participation $participation) {
+
+      $participation->destroy();
+       
+      return redirect('/')->with('message','participation deleted successfully!');
+
+    }
+
+  }

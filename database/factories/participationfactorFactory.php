@@ -12,9 +12,13 @@ class participationfactorFactory extends Factory
      * @return array
      */
     public function definition()
-    {
+    {   
         return [
-            
+            'name'=>$this->faker->name,
+            'age'=>$this->faker->age,
+            'address'=>$this->faker->address,
+            'phone'=>$this->faker->phone,
+            'email'=>$this->faker->email
         ];
     }
 }

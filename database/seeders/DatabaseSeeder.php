@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,20 +15,24 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(5)->create();
+        // App\Models\User::factory(6)->create();
 
-        // participation::factory(5)->create();
+      
+
+        $this->call(adminSeeder::class);
+
+        
+    }
+}
 
 
-        // participations::create([
-        //     'name' =>'john',
-        //     'age' =>'45',
-        //     'address' =>'dsewf',
-        //     'phone' =>'6590876534',
-        //     'email' =>'hadsy@gmail.com'
-        // ]);
+
+        
+    
+        
+
+
 
 
     
-}
-}
+
