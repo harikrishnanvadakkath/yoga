@@ -54,18 +54,25 @@ use Whoops\Run;
 // });
 
 
-Route::get('login', [AuthController::class, 'index'])->name('login');  
+Route::get('login', [AuthController::class, 'index'])->name('login'); 
 
 Route::post('post-login', [AuthController::class, 'postLogin'])->name('login.post'); 
-
-Route::get('registration', [AuthController::class, 'registration'])->name('register');
-
-Route::post('post-registration', [AuthController::class, 'postRegistration'])->name('register.post');  
 
 Route::get('dashboard', [AuthController::class, 'dashboard'])->name('dashboard'); 
 
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::get('asanacategory',[AuthController::class,'asanacategory'])->name('asanacategory');
+Route::get('/index',[CategoryController::class,'index'])->name('index');
 
+Route::get('create',[CategoryController::class,'create'])->name('create');
+
+Route::post('/',[CategoryController::class,'store'])->name('store');
+
+Route::get('show',[CategoryController::class,'show'])->name('show');
+
+Route::get('/{category}/edit',[CategoryController::class,'edit'])->name('edit');
+
+Route::put('/{category}/update',[CategoryController::class,'update'])->name('update');
+
+Route::get('/category/{category}',[CategoryController::class,'destroy'])->name('destroy');
     

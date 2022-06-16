@@ -2,21 +2,19 @@
 
 @section('content')
 
-
 <div style="text-align:center">
-
 
 <form action="{{ route('login.post') }}" method="POST">
 @csrf
 <div class="form-group row">
 <div class="header">LOGIN</div>
 <br>
-<label for="email_address">Email </label>
+<label for="email address">Email </label>
 <div class="col-md-6">
     <input type="text" class="form-control" name="email">
 
     @error('email')
-<p>{{$message}}</p>
+ <p>{{$message}}</p>
 @enderror
 
 </div>
@@ -33,6 +31,7 @@
 @error('password')
 <p>{{$message}}<p>
     @enderror
+
 </div>
 </div>
 

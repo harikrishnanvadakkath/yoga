@@ -1,13 +1,12 @@
-@extends('layout.app')
+<!-- @extends('layout.app')
  
 @section('content')
 
 
 <div style="text-align:center">
-<div class="card-header">Register</div>
-<br>
 
-<form action="{{ route('register.post') }}" method="POST">
+
+<form action="{{ route('asana.post') }}" method="POST">
 @csrf
 <div class="form-group row">
 <label for="name">Name</label>
@@ -56,4 +55,4 @@ Register
 </div>
 </div>
 
-@endsection
+@endsection -->
