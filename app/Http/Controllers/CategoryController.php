@@ -49,11 +49,11 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Category  $category
+     * @param  \App\Models\Category $category
      * @return \Illuminate\Http\Response
      */
     
-    public function show(Category $category)
+     public function show(Category $category)
     {
         return view('category.show');
     }
@@ -66,9 +66,8 @@ class CategoryController extends Controller
      */
       public function edit(Category $category)
     {
-        return view('category.edit');
+      return view('category.edit');
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -80,7 +79,7 @@ class CategoryController extends Controller
     {
         $formfields = $request->validate([
 
-        'name' => ['required','string','max:225'],
+        'name' => ['required','string','max:225']
         ]);
 
         Category::update($formfields); 
@@ -98,7 +97,7 @@ class CategoryController extends Controller
     {
         $category->destroy();
 
-         return redirect('/')->with ('message','category deleted successfully');
+         return redirect('/')->with ('message','category deleted successfully!');
 
     }
 }

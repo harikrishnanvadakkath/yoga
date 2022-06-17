@@ -62,17 +62,16 @@ Route::get('dashboard', [AuthController::class, 'dashboard'])->name('dashboard')
 
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::get('/index',[CategoryController::class,'index'])->name('index');
+Route::get('/',[CategoryController::class,'index'])->name('index');
 
-Route::get('create',[CategoryController::class,'create'])->name('create');
+Route::get('/category/create',[CategoryController::class,'create'])->name('create');
 
 Route::post('/',[CategoryController::class,'store'])->name('store');
 
-Route::get('show',[CategoryController::class,'show'])->name('show');
+Route::get('/{category}',[CategoryController::class,'show'])->name('show');
 
 Route::get('/{category}/edit',[CategoryController::class,'edit'])->name('edit');
 
 Route::put('/{category}/update',[CategoryController::class,'update'])->name('update');
 
 Route::get('/category/{category}',[CategoryController::class,'destroy'])->name('destroy');
-    

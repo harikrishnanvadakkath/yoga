@@ -4,10 +4,10 @@
 @section('content')
 <style>
     div {
-  background-color: lightgray;
+  background-color:lightgray;
   margin:15px;
     }
-
+    
 </style>
 </head>
 <body>
@@ -19,6 +19,7 @@
  <table style="width:100%">
 
     <div class="header">Dashboard</div>  
+    
     <br>
     <br><br>
 </div>

@@ -13,9 +13,9 @@
 <div class="col-md-6">
     <input type="text" class="form-control" name="email">
 
-    @error('email')
+ @error('email')
  <p>{{$message}}</p>
-@enderror
+ @enderror
 
 </div>
 </div>
@@ -24,7 +24,7 @@
 
 <div class="form-group row">
 
-<label for="password" >Password</label>
+<label for="password">Password</label>
 <div class="col-md-6">
 <input type="password"  class="form-control" name="password">
 
@@ -37,8 +37,7 @@
 
 <br>
 <br>
-
-    <button type="submit" class="btn btn-primary">
+ <button type="submit" class="btn btn-primary">
         Login
     </button>
 </div>

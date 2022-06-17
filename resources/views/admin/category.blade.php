@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="row">
-    <a href="{{route('category.'}}"  class="btn btn-success">Add</a>
+    <a href="{{('category.store'}}" class="btn btn-success">Add</a>
 	</div>
     <table class="table table-bordered">
         <thead>
@@ -15,6 +15,7 @@
       </thead>
        <tbody>
     <tr>
+
         <td>{{Uttanasana}}</td>
         <td>{{Virabhadrasana1}}</td>
         <td>{{Marjaryasana-Bitilasana}}</td>
@@ -30,5 +31,7 @@
 </tr>
 @endforeach
 </tbody>
+{{$categories->links()}}
+
 @endsection
 
